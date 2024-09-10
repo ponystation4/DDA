@@ -22,8 +22,10 @@ namespace DDA
             panel1.Controls.Add(FormsPlot1);
 
             // Plot data using the control
-            double[] data = ScottPlot.Generate.Sin();
-            FormsPlot1.Plot.Add.Signal(data);
+            double[] dataX = { 1, 2, 3, 4, 5 };
+            double[] dataY = { 1, 2, 3, 4, 5 };
+
+            FormsPlot1.Plot.Add.Scatter(dataX, dataY);
             FormsPlot1.Refresh();
         }
     }
