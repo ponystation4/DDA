@@ -40,9 +40,11 @@ namespace DDA
             FormsPlot1.Plot.Clear();            
             FormsPlot1.Plot.Title("Preparado.");
             FormsPlot1.Refresh();
-            lbl_P2.Text  = "...";
+            lbl_P2.Text = "...";
+            lbl_P3.Text  = "...";
             lbl_DH2.Text = "...";
             lbl_DV2.Text = "...";
+            txt_x1.Focus();
         }
 
         private void btn_calc_Click(object sender, EventArgs e)
