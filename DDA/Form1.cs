@@ -272,7 +272,7 @@ namespace DDA
                 }
                 else
                 {
-                    e.Value = valor.ToString("N5"); // Con 2 decimales
+                    e.Value = valor.ToString("N2"); // Con 2 decimales
                 }
 
                 e.FormattingApplied = true;
