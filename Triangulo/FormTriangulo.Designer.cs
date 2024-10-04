@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_y11 = new System.Windows.Forms.TextBox();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.dgv_tabla1 = new System.Windows.Forms.DataGridView();
@@ -42,8 +42,6 @@
             this.lbl_y11 = new System.Windows.Forms.Label();
             this.lbl_x11 = new System.Windows.Forms.Label();
             this.btn_calc = new System.Windows.Forms.Button();
-            this.lbl_Elem = new System.Windows.Forms.Label();
-            this.txt_Elem = new System.Windows.Forms.TextBox();
             this.txt_y12 = new System.Windows.Forms.TextBox();
             this.txt_x22 = new System.Windows.Forms.TextBox();
             this.txt_y22 = new System.Windows.Forms.TextBox();
@@ -82,31 +80,33 @@
             // btn_Limpiar
             // 
             this.btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Limpiar.Location = new System.Drawing.Point(169, 391);
+            this.btn_Limpiar.Location = new System.Drawing.Point(99, 408);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(99, 56);
             this.btn_Limpiar.TabIndex = 32;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // dgv_tabla1
             // 
             this.dgv_tabla1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_tabla1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tabla1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tabla1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_tabla1.Location = new System.Drawing.Point(12, 169);
             this.dgv_tabla1.Name = "dgv_tabla1";
-            this.dgv_tabla1.Size = new System.Drawing.Size(135, 212);
+            this.dgv_tabla1.Size = new System.Drawing.Size(135, 233);
             this.dgv_tabla1.TabIndex = 33;
             this.dgv_tabla1.TabStop = false;
+            this.dgv_tabla1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_tabla1_CellFormatting);
             // 
             // txt_x21
             // 
@@ -175,30 +175,13 @@
             // btn_calc
             // 
             this.btn_calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calc.Location = new System.Drawing.Point(28, 391);
+            this.btn_calc.Location = new System.Drawing.Point(236, 408);
             this.btn_calc.Name = "btn_calc";
             this.btn_calc.Size = new System.Drawing.Size(99, 56);
             this.btn_calc.TabIndex = 30;
             this.btn_calc.Text = "Calcular";
             this.btn_calc.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Elem
-            // 
-            this.lbl_Elem.AutoSize = true;
-            this.lbl_Elem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Elem.Location = new System.Drawing.Point(290, 391);
-            this.lbl_Elem.Name = "lbl_Elem";
-            this.lbl_Elem.Size = new System.Drawing.Size(169, 20);
-            this.lbl_Elem.TabIndex = 34;
-            this.lbl_Elem.Text = "Número de elementos:";
-            // 
-            // txt_Elem
-            // 
-            this.txt_Elem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Elem.Location = new System.Drawing.Point(321, 414);
-            this.txt_Elem.Name = "txt_Elem";
-            this.txt_Elem.Size = new System.Drawing.Size(75, 26);
-            this.txt_Elem.TabIndex = 28;
+            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
             // 
             // txt_y12
             // 
@@ -378,55 +361,55 @@
             // 
             this.dgv_tabla2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_tabla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.NullValue = null;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tabla2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tabla2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tabla2.Location = new System.Drawing.Point(153, 169);
             this.dgv_tabla2.Name = "dgv_tabla2";
-            this.dgv_tabla2.Size = new System.Drawing.Size(135, 212);
+            this.dgv_tabla2.Size = new System.Drawing.Size(135, 233);
             this.dgv_tabla2.TabIndex = 61;
             this.dgv_tabla2.TabStop = false;
+            this.dgv_tabla2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_tabla2_CellFormatting);
             // 
             // dgv_tabla3
             // 
             this.dgv_tabla3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_tabla3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tabla3.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tabla3.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tabla3.Location = new System.Drawing.Point(294, 169);
             this.dgv_tabla3.Name = "dgv_tabla3";
-            this.dgv_tabla3.Size = new System.Drawing.Size(135, 212);
+            this.dgv_tabla3.Size = new System.Drawing.Size(135, 233);
             this.dgv_tabla3.TabIndex = 62;
             this.dgv_tabla3.TabStop = false;
+            this.dgv_tabla3.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_tabla3_CellFormatting);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Location = new System.Drawing.Point(490, 12);
+            this.panel1.Location = new System.Drawing.Point(447, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 452);
+            this.panel1.Size = new System.Drawing.Size(439, 452);
             this.panel1.TabIndex = 21;
             // 
             // FormTriangulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 476);
-            this.Controls.Add(this.txt_Elem);
-            this.Controls.Add(this.lbl_Elem);
+            this.ClientSize = new System.Drawing.Size(898, 476);
             this.Controls.Add(this.btn_calc);
             this.Controls.Add(this.dgv_tabla3);
             this.Controls.Add(this.dgv_tabla2);
@@ -483,8 +466,6 @@
         private System.Windows.Forms.Label lbl_y11;
         private System.Windows.Forms.Label lbl_x11;
         private System.Windows.Forms.Button btn_calc;
-        private System.Windows.Forms.Label lbl_Elem;
-        private System.Windows.Forms.TextBox txt_Elem;
         private System.Windows.Forms.TextBox txt_y12;
         private System.Windows.Forms.TextBox txt_x22;
         private System.Windows.Forms.TextBox txt_y22;
