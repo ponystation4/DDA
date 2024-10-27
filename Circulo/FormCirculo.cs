@@ -77,7 +77,6 @@ namespace Circulo
             LimpiarPlot();
             LimpiarTexto();
         }
-
         private void UnirValoresColumnas(DataGridView dgv)
         {
             
@@ -92,14 +91,13 @@ namespace Circulo
                 }
             }
         }
-
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
-
         private void btn_Calcular_Click(object sender, EventArgs e)
         {
+            //Se obtienen los valores ingresados por el usuario
             double radio = Convert.ToDouble(txt_Radio.Text);
             double x = Convert.ToDouble(txt_X.Text);
             double y = Convert.ToDouble(txt_Y.Text);
@@ -107,7 +105,6 @@ namespace Circulo
             int N = 0;
             double PK = 0;
             double nPK = 0; //Pk+1
-            double K = 0;
 
             //Parámetro de decisión
             PK = 1 - radio;
@@ -145,14 +142,14 @@ namespace Circulo
             //Obtención de valores
             do
             {
-                if (N == 0)
+                if (N == 0) //Si es la primera ejecución se usa el parámetro de decisión
                 {
                     listaX.Add(xsum);
                     listaY.Add(radio);
                     xsum++;
                     nPK = PK;
                 }
-                else
+                else //De otra forma se decide si PK es mayor, igual o menor que 0
                 {
                     if (nPK < 0)
                     {
@@ -171,17 +168,16 @@ namespace Circulo
                         listaY.Add(ysum);
                         ysum--;
                     }
-
                 }
-
-
                 N++;
             }
             while (!(xsum >= ysum));
 
+            //Lista de valores de los octantes
             double[] ValoresX = listaX.ToArray();
             double[] ValoresY = listaY.ToArray();
 
+            //Creación de tablas con valores negativos
             double[] ValoresXNeg = new double[ValoresX.Length];
             for (int i = 0; i < ValoresX.Length; i++)
             {
@@ -245,7 +241,7 @@ namespace Circulo
                 dgv_8.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
 
-            for (int i = 0; i < ValoresY.Length; i++)
+            for (int i = 0; i < ValoresY.Length; i++) //Añade líneas que conectan el centro con los puntos del círculo
             {
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_1.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_1.Rows[i].Cells[1].Value));
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_2.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_2.Rows[i].Cells[1].Value));
@@ -257,10 +253,11 @@ namespace Circulo
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_8.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_8.Rows[i].Cells[1].Value));
             }
 
-            var c1 = FormsPlot1.Plot.Add.Circle(x, y, radio);
+            var c1 = FormsPlot1.Plot.Add.Circle(x, y, radio); //Añade un círculo de ejemplo
             c1.LineWidth = 0.4F;
             c1.LineColor = Colors.Black;
 
+            //Une los valores de las columnas para crear la circunferencia del círculo con los valores de los octantes
             UnirValoresColumnas(dgv_1);
             UnirValoresColumnas(dgv_2);
             UnirValoresColumnas(dgv_3);
@@ -270,11 +267,13 @@ namespace Circulo
             UnirValoresColumnas(dgv_7);
             UnirValoresColumnas(dgv_8);
 
+            //Colorea los puntos finales de la circunferencia de verde
             var puntos = FormsPlot1.Plot.Add.Scatter(listaColumnaX, listaColumnaY);
             puntos.Color = Colors.Green.WithOpacity(.2);
             puntos.LineWidth = 0;
             puntos.MarkerSize = 25;
 
+            //Escala automáticamente el gráfico para ajustarse al FormsPlot sin afectar la precisión del círculo
             FormsPlot1.Plot.Axes.AutoScale();
             FormsPlot1.Plot.Title("Círculo");
             FormsPlot1.Refresh();
