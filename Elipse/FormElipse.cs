@@ -39,13 +39,12 @@ namespace Elipse
             dgv_3.Columns.Add("Column1", "X");
             dgv_3.Columns.Add("Column2", "Y");
             dgv_4.Columns.Add("Column1", "X");
-            dgv_4.Columns.Add("Column2", "Y");
+            dgv_4.Columns.Add("Column2", "Y"); 
 
         }
 
         private void UnirValoresColumnas(DataGridView dgv)
         {
-
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 // Verificar que la fila no esté vacía
@@ -69,7 +68,6 @@ namespace Elipse
             //Valores PK
             int N = 0;
             int O = 0;
-            double PK = 0;
             double nPK = 0; //Pk+1
 
             //Se crean las listas de valores
@@ -126,14 +124,15 @@ namespace Elipse
                 }
                 N++;
             }
-            MessageBox.Show("Último xsum = " + Convert.ToString(xsum) + ", último ysum = " + Convert.ToString(ysum));
+
+            /* .-.. -. .--. .-- ...- .- .-. .--- .-.. \ ..-. -... --.. .- --.. --- ... \ .--- -.. -.. - .... - */
             //Obtención de valores (Región 2)
             while (ysum != 0)
             {
                 if (O == 0) //Si es la primera ejecución se usa el parámetro de decisión
                 {
                     //Primer valor (Parámetro de decisión)
-                    nPK = ((Math.Pow(radioY, 2) * Math.Pow(xsum + 0.5, 2)) + (Math.Pow(radioX, 2) * Math.Pow(ysum - 1, 2)) - (Math.Pow(radioX, 2) * Math.Pow(radioY, 2)));
+                    nPK = ((Math.Pow(radioY, 2) * Math.Pow(xsum + 0.5, 2)) + (Math.Pow(radioX, 2) * Math.Pow(ysum - 1, 2)) - (Math.Pow(radioX, 2) * Math.Pow(radioY, 2))); //Exceso de texto
                 }
                 else
                 {
@@ -154,45 +153,8 @@ namespace Elipse
                     }
                 }
 
-                O++;
+                O++;//Un saludo a la raza de la FCFM que la sigue cotorreando*/
             }
-            /* do
-            {
-                if (O == 0) //Parámetro de decisión P2
-                {
-                    /*nPK = ((Math.Pow(radioY, 2) * Math.Pow(xsum + 0.5, 2)) + (Math.Pow(radioX, 2) * Math.Pow(ysum - 1, 2)) - (Math.Pow(radioX, 2) * Math.Pow(radioY, 2))); //Mucho texto AAA
-                    double seccion1 = Math.Pow(radioY, 2) + Math.Pow((xsum+0.5), 2);
-                    double seccion2 = Math.Pow(radioX, 2) * Math.Pow((ysum - 1), 2);
-                    double seccion3 = Math.Pow(radioX, 2) * Math.Pow(radioY, 2);
-                    //Borrar esta parte después
-                    MessageBox.Show("xsum = " + xsum + " ysum = " + ysum, "huh");
-                    MessageBox.Show("R2Y = " + Convert.ToString(seccion1) + " + " + Convert.ToString(seccion2) + " - " + Convert.ToString(seccion3),Convert.ToString(nPK));
-                }
-                else
-                {
-                    if (nPK <= 0)
-                    {
-                        PK = nPK;
-                        nPK = PK + (2 * Math.Pow(radioY, 2) * xsum) - (2 * Math.Pow(radioX, 2) * ysum) + (Math.Pow(radioX, 2));
-                        listaX.Add(xsum);
-                        xsum++;
-                        listaY.Add(ysum);
-                        ysum--;
-                    }
-                    else
-                    {
-                        PK = nPK;
-                        nPK = PK - (2 * Math.Pow(radioX, 2) * ysum) + Math.Pow(radioX, 2);
-                        listaX.Add(xsum);
-                        listaY.Add(ysum);
-                        xsum++;
-                    }
-                }
-
-                O++;
-            } 
-
-            while (ysum!=0); //Un saludo a la raza de la FCFM que la sigue cotorreando*/
 
             //Lista de valores de los octantes
             double[] ValoresX = listaX.ToArray();
@@ -217,7 +179,7 @@ namespace Elipse
                 dgv_1.Rows[i].Cells[0].Value = ValoresX[i] + x;
                 dgv_1.Rows[i].Cells[1].Value = ValoresY[i] + y;
                 dgv_1.AutoResizeColumns();
-                dgv_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgv_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //Ajuste de las columnas de los DGV
 
                 dgv_2.Rows.Add();
                 dgv_2.Rows[i].Cells[0].Value = ValoresX[i] + x;
@@ -243,14 +205,11 @@ namespace Elipse
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_2.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_2.Rows[i].Cells[1].Value));
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_3.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_3.Rows[i].Cells[1].Value));
                 FormsPlot1.Plot.Add.Line(x, y, Convert.ToDouble(dgv_4.Rows[i].Cells[0].Value), Convert.ToDouble(dgv_4.Rows[i].Cells[1].Value));
+                
             }
 
-            //Añade un círculo de ejemplo
-            var e1 = FormsPlot1.Plot.Add.Ellipse(
-                xCenter: x,
-                yCenter: y,
-                radiusX: radioX,
-                radiusY: radioY); 
+            //Añade una elipse de referencia
+            var e1 = FormsPlot1.Plot.Add.Ellipse(xCenter: x, yCenter: y, radiusX: radioX, radiusY: radioY); 
             e1.LineWidth = 0.4F;
             e1.LineColor = Colors.Black;
 
@@ -267,16 +226,42 @@ namespace Elipse
             puntos.MarkerSize = 25;
 
             //Escala automáticamente el gráfico para ajustarse al FormsPlot sin afectar la precisión del círculo
-            FormsPlot1.Plot.Axes.AutoScale();
             FormsPlot1.Plot.Title("Elipse");
+            FormsPlot1.Plot.Axes.SquareUnits(); //Función muy bonita, muy coqueta, para forzar escala 1:1
+            FormsPlot1.Plot.Axes.AutoScale();   //Aún así, autoajustar el gráfico resultante para que quepa
             FormsPlot1.Refresh();
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
             {
-
+                Limpiar();
             }
 
-        
+        void LimpiarDGV()
+        {
+            dgv_1.Rows.Clear();
+            dgv_2.Rows.Clear();
+            dgv_3.Rows.Clear();
+            dgv_4.Rows.Clear();
+        }
+        void LimpiarPlot()
+        {
+            FormsPlot1.Plot.Clear();
+            FormsPlot1.Plot.Title("Preparado.");
+            FormsPlot1.Refresh();
+        }
+        void LimpiarTexto()
+        {
+            txt_RadioX.Clear();
+            txt_RadioY.Clear();
+            txt_X.Clear();
+            txt_Y.Clear();
+        }
+        void Limpiar()
+        {
+            LimpiarDGV();
+            LimpiarPlot();
+            LimpiarTexto();
+        }
     }
 }

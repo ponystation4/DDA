@@ -63,7 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 426);
             this.panel1.TabIndex = 22;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgv_1
             // 
@@ -72,7 +71,6 @@
             this.dgv_1.Name = "dgv_1";
             this.dgv_1.Size = new System.Drawing.Size(130, 150);
             this.dgv_1.TabIndex = 23;
-            this.dgv_1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_1_CellContentClick);
             // 
             // txt_X
             // 
@@ -80,7 +78,6 @@
             this.txt_X.Name = "txt_X";
             this.txt_X.Size = new System.Drawing.Size(60, 20);
             this.txt_X.TabIndex = 24;
-            this.txt_X.TextChanged += new System.EventHandler(this.txt_X_TextChanged);
             // 
             // txt_Y
             // 
@@ -88,7 +85,6 @@
             this.txt_Y.Name = "txt_Y";
             this.txt_Y.Size = new System.Drawing.Size(60, 20);
             this.txt_Y.TabIndex = 25;
-            this.txt_Y.TextChanged += new System.EventHandler(this.txt_Y_TextChanged);
             // 
             // lbl_Coord
             // 
@@ -98,7 +94,6 @@
             this.lbl_Coord.Size = new System.Drawing.Size(115, 13);
             this.lbl_Coord.TabIndex = 26;
             this.lbl_Coord.Text = "Coordenadas de inicio:";
-            this.lbl_Coord.Click += new System.EventHandler(this.lbl_Coord_Click);
             // 
             // lbl_X
             // 
@@ -108,7 +103,6 @@
             this.lbl_X.Size = new System.Drawing.Size(14, 13);
             this.lbl_X.TabIndex = 27;
             this.lbl_X.Text = "X";
-            this.lbl_X.Click += new System.EventHandler(this.lbl_X_Click);
             // 
             // lbl_Y
             // 
@@ -118,7 +112,6 @@
             this.lbl_Y.Size = new System.Drawing.Size(14, 13);
             this.lbl_Y.TabIndex = 28;
             this.lbl_Y.Text = "Y";
-            this.lbl_Y.Click += new System.EventHandler(this.lbl_Y_Click);
             // 
             // lbl_Radio
             // 
@@ -128,7 +121,6 @@
             this.lbl_Radio.Size = new System.Drawing.Size(38, 13);
             this.lbl_Radio.TabIndex = 29;
             this.lbl_Radio.Text = "Radio:";
-            this.lbl_Radio.Click += new System.EventHandler(this.lbl_Radio_Click);
             // 
             // txt_Radio
             // 
@@ -136,7 +128,6 @@
             this.txt_Radio.Name = "txt_Radio";
             this.txt_Radio.Size = new System.Drawing.Size(50, 20);
             this.txt_Radio.TabIndex = 30;
-            this.txt_Radio.TextChanged += new System.EventHandler(this.txt_Radio_TextChanged);
             // 
             // dgv_2
             // 
@@ -145,7 +136,6 @@
             this.dgv_2.Name = "dgv_2";
             this.dgv_2.Size = new System.Drawing.Size(130, 150);
             this.dgv_2.TabIndex = 31;
-            this.dgv_2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_2_CellContentClick);
             // 
             // dgv_3
             // 
@@ -154,7 +144,6 @@
             this.dgv_3.Name = "dgv_3";
             this.dgv_3.Size = new System.Drawing.Size(130, 150);
             this.dgv_3.TabIndex = 32;
-            this.dgv_3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_3_CellContentClick);
             // 
             // dgv_4
             // 
@@ -163,7 +152,6 @@
             this.dgv_4.Name = "dgv_4";
             this.dgv_4.Size = new System.Drawing.Size(130, 150);
             this.dgv_4.TabIndex = 33;
-            this.dgv_4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_4_CellContentClick);
             // 
             // dgv_5
             // 
@@ -244,7 +232,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormCirculo";
             this.Text = "Círculo";
-            this.Load += new System.EventHandler(this.FormCirculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_3)).EndInit();
