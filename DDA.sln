@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangulo", "Triangulo\Tria
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circulo", "Circulo\Circulo.csproj", "{EDE458CC-68CA-48A5-B32C-4DDED7911BCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elipse", "Elipse\Elipse.csproj", "{5DD2F861-DF61-4CD2-B08F-CE38C325A4D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EDE458CC-68CA-48A5-B32C-4DDED7911BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDE458CC-68CA-48A5-B32C-4DDED7911BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDE458CC-68CA-48A5-B32C-4DDED7911BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD2F861-DF61-4CD2-B08F-CE38C325A4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD2F861-DF61-4CD2-B08F-CE38C325A4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD2F861-DF61-4CD2-B08F-CE38C325A4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD2F861-DF61-4CD2-B08F-CE38C325A4D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
